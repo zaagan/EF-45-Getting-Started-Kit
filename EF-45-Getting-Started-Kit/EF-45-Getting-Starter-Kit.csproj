@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5F5A3075-F8FE-4AF2-A690-DFE44661639C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>App</RootNamespace>
+    <AssemblyName>EF-45-Getting-Started-Kit</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>geek.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaBlendTextBox, Version=1.0.1270.35793, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="CMITech.UMXClient, Version=1.3.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CMITech.UMXClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\IrisDeviceControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IrisDeviceControl.designer.cs">
+      <DependentUpon>IrisDeviceControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StatusBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StatusBar.designer.cs">
+      <DependentUpon>StatusBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogListForm.designer.cs">
+      <DependentUpon>LogListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UMXForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UMXForm.designer.cs">
+      <DependentUpon>UMXForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Master2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master2.Designer.cs">
+      <DependentUpon>Master2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\DataHolder.cs" />
+    <Compile Include="Utilities\Helpers.cs" />
+    <Compile Include="Utilities\IrisComponentInitializer.cs" />
+    <Compile Include="Utilities\LogMessages.cs" />
+    <Compile Include="Utilities\MessageManager.cs" />
+    <EmbeddedResource Include="Controls\IrisDeviceControl.resx">
+      <DependentUpon>IrisDeviceControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StatusBar.resx">
+      <DependentUpon>StatusBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogListForm.resx">
+      <DependentUpon>LogListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UMXForm.resx">
+      <DependentUpon>UMXForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master2.resx">
+      <DependentUpon>Master2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AlphaBlendTextBox.dll" />
+    <Content Include="CMITech.UMXClient.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="geek.ico" />
+    <None Include="Resources\noFileIcon.png" />
+    <None Include="Resources\iris_tracking_26_off.png" />
+    <None Include="Resources\iris_tracking_25_on.png" />
+    <None Include="Resources\iris_tracking_25_off.png" />
+    <None Include="Resources\iris_tracking_24_on.png" />
+    <None Include="Resources\iris_tracking_24_off.png" />
+    <None Include="Resources\iris_tracking_23_on.png" />
+    <None Include="Resources\iris_tracking_23_off.png" />
+    <None Include="Resources\iris_tracking_22_on.png" />
+    <None Include="Resources\iris_tracking_22_off.png" />
+    <None Include="Resources\iris_tracking_21_on.png" />
+    <None Include="Resources\iris_tracking_21_off.png" />
+    <None Include="Resources\iris_tracking_20_on.png" />
+    <None Include="Resources\iris_tracking_20_off.png" />
+    <None Include="Resources\iris_tracking_19_on.png" />
+    <None Include="Resources\iris_tracking_19_off.png" />
+    <None Include="Resources\iris_tracking_18_on.png" />
+    <None Include="Resources\iris_tracking_18_off.png" />
+    <None Include="Resources\iris_tracking_17_on.png" />
+    <None Include="Resources\iris_tracking_17_off.png" />
+    <None Include="Resources\iris_tracking_16_on.png" />
+    <None Include="Resources\iris_tracking_16_off.png" />
+    <None Include="Resources\iris_tracking_15_on.png" />
+    <None Include="Resources\iris_tracking_15_off.png" />
+    <None Include="Resources\iris_tracking_14_on.png" />
+    <None Include="Resources\iris_tracking_14_off.png" />
+    <None Include="Resources\iris_tracking_13_on.png" />
+    <None Include="Resources\iris_tracking_13_off.png" />
+    <None Include="Resources\iris_tracking_12_on.png" />
+    <None Include="Resources\iris_tracking_12_off.png" />
+    <None Include="Resources\iris_tracking_11_on.png" />
+    <None Include="Resources\iris_tracking_11_off.png" />
+    <None Include="Resources\iris_tracking_10_on.png" />
+    <None Include="Resources\iris_tracking_10_off.png" />
+    <None Include="Resources\iris_tracking_09_on.png" />
+    <None Include="Resources\iris_tracking_09_off.png" />
+    <None Include="Resources\iris_tracking_08_on.png" />
+    <None Include="Resources\iris_tracking_08_off.png" />
+    <None Include="Resources\iris_tracking_07_on.png" />
+    <None Include="Resources\iris_tracking_07_off.png" />
+    <None Include="Resources\iris_tracking_06_on.png" />
+    <None Include="Resources\iris_tracking_06_off.png" />
+    <None Include="Resources\iris_tracking_05_on.png" />
+    <None Include="Resources\iris_tracking_05_off.png" />
+    <None Include="Resources\iris_tracking_04_on.png" />
+    <None Include="Resources\iris_tracking_04_off.png" />
+    <None Include="Resources\iris_tracking_03_on.png" />
+    <None Include="Resources\iris_tracking_03_off.png" />
+    <None Include="Resources\iris_tracking_02_on.png" />
+    <None Include="Resources\iris_tracking_02_off.png" />
+    <None Include="Resources\iris_tracking_01_on.png" />
+    <None Include="Resources\iris_tracking_01_off.png" />
+    <None Include="Resources\Iris_guide_red.png" />
+    <None Include="Resources\Iris_guide_green_02.png" />
+    <None Include="Resources\Iris_guide_blue.png" />
+    <None Include="Resources\Ind.png" />
+    <None Include="Resources\ic_search.png" />
+    <None Include="Resources\face_tracking_31_on.png" />
+    <None Include="Resources\face_tracking_31_off.png" />
+    <None Include="Resources\face_tracking_30_on.png" />
+    <None Include="Resources\face_tracking_30_off.png" />
+    <None Include="Resources\face_tracking_29_on.png" />
+    <None Include="Resources\face_tracking_29_off.png" />
+    <None Include="Resources\face_tracking_28_on.png" />
+    <None Include="Resources\face_tracking_28_off.png" />
+    <None Include="Resources\face_tracking_27_on.png" />
+    <None Include="Resources\face_tracking_27_off.png" />
+    <None Include="Resources\face_tracking_26_on.png" />
+    <None Include="Resources\face_tracking_26_off.png" />
+    <None Include="Resources\face_tracking_25_on.png" />
+    <None Include="Resources\face_tracking_25_off.png" />
+    <None Include="Resources\face_tracking_24_on.png" />
+    <None Include="Resources\face_tracking_24_off.png" />
+    <None Include="Resources\face_tracking_23_on.png" />
+    <None Include="Resources\face_tracking_23_off.png" />
+    <None Include="Resources\face_tracking_22_on.png" />
+    <None Include="Resources\face_tracking_22_off.png" />
+    <None Include="Resources\face_tracking_21_on.png" />
+    <None Include="Resources\face_tracking_21_off.png" />
+    <None Include="Resources\face_tracking_20_on.png" />
+    <None Include="Resources\face_tracking_20_off.png" />
+    <None Include="Resources\face_tracking_19_on.png" />
+    <None Include="Resources\face_tracking_19_off.png" />
+    <None Include="Resources\face_tracking_18_on.png" />
+    <None Include="Resources\face_tracking_18_off.png" />
+    <None Include="Resources\face_tracking_17_on.png" />
+    <None Include="Resources\face_tracking_17_off.png" />
+    <None Include="Resources\face_tracking_16_on.png" />
+    <None Include="Resources\face_tracking_16_off.png" />
+    <None Include="Resources\face_tracking_15_on.png" />
+    <None Include="Resources\face_tracking_15_off.png" />
+    <None Include="Resources\face_tracking_14_on.png" />
+    <None Include="Resources\face_tracking_14_off.png" />
+    <None Include="Resources\face_tracking_13_on.png" />
+    <None Include="Resources\face_tracking_13_off.png" />
+    <None Include="Resources\face_tracking_12_on.png" />
+    <None Include="Resources\face_tracking_12_off.png" />
+    <None Include="Resources\face_tracking_11_on.png" />
+    <None Include="Resources\face_tracking_11_off.png" />
+    <None Include="Resources\face_tracking_10_on.png" />
+    <None Include="Resources\face_tracking_10_off.png" />
+    <None Include="Resources\face_tracking_09_on.png" />
+    <None Include="Resources\face_tracking_09_off.png" />
+    <None Include="Resources\face_tracking_08_on.png" />
+    <None Include="Resources\face_tracking_08_off.png" />
+    <None Include="Resources\face_tracking_07_on.png" />
+    <None Include="Resources\face_tracking_07_off.png" />
+    <None Include="Resources\face_tracking_06_on.png" />
+    <None Include="Resources\face_tracking_06_off.png" />
+    <None Include="Resources\face_tracking_05_on.png" />
+    <None Include="Resources\face_tracking_05_off.png" />
+    <None Include="Resources\face_tracking_04_on.png" />
+    <None Include="Resources\face_tracking_04_off.png" />
+    <None Include="Resources\face_tracking_03_on.png" />
+    <None Include="Resources\face_tracking_03_off.png" />
+    <None Include="Resources\face_tracking_02_on.png" />
+    <None Include="Resources\face_tracking_02_off.png" />
+    <None Include="Resources\face_tracking_01_on.png" />
+    <None Include="Resources\face_tracking_01_off.png" />
+    <None Include="Resources\face_guide_red.png" />
+    <None Include="Resources\face_guide_green_02.png" />
+    <None Include="Resources\face_guide_blue.png" />
+    <None Include="Resources\iris_tracking_26_on.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
